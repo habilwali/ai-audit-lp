@@ -1,0 +1,261 @@
+.audit-info {
+    background: linear-gradient(135deg,
+        rgba(107, 70, 193, 0.05) 0%,
+        rgba(56, 178, 172, 0.05) 50%,
+        rgba(246, 173, 85, 0.05) 100%
+    );
+    position: relative;
+    overflow: hidden;
+}
+
+.audit-info::before {
+    content: '';
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle,
+        rgba(107, 70, 193, 0.08) 0%,
+        rgba(107, 70, 193, 0.05) 40%,
+        transparent 70%
+    );
+    top: -300px;
+    left: -300px;
+    border-radius: 50%;
+    z-index: 0;
+}
+
+.audit-info::after {
+    content: '';
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle,
+        rgba(56, 178, 172, 0.08) 0%,
+        rgba(56, 178, 172, 0.05) 40%,
+        transparent 70%
+    );
+    bottom: -200px;
+    right: -200px;
+    border-radius: 50%;
+    z-index: 0;
+}
+
+.audit-info .container {
+    position: relative;
+    z-index: 1;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+    position: relative;
+}
+
+.section-header h2 {
+    font-size: 2.8rem;
+    margin-bottom: 1.2rem;
+    background: linear-gradient(135deg, 
+        #6B46C1 0%, 
+        #805AD5 50%, 
+        #38B2AC 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+    display: inline-block;
+}
+
+.section-header p {
+    font-size: 1.2rem;
+    color: #4A5568;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+
+.row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin-top: 60px;
+}
+
+.col {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    padding: 40px 30px;
+    border-radius: 20px;
+    text-align: left;
+    transition: all 0.4s ease;
+    border: 1px solid rgba(107, 70, 193, 0.1);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 
+        0 4px 6px -1px rgba(107, 70, 193, 0.05),
+        0 2px 4px -1px rgba(107, 70, 193, 0.03);
+}
+
+.col::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg,
+        rgba(107, 70, 193, 0.1) 0%,
+        rgba(56, 178, 172, 0.08) 50%,
+        rgba(246, 173, 85, 0.1) 100%
+    );
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.col:hover {
+    transform: translateY(-10px);
+    border-color: rgba(107, 70, 193, 0.2);
+    box-shadow: 
+        0 20px 40px rgba(107, 70, 193, 0.1),
+        0 10px 20px rgba(56, 178, 172, 0.1);
+    background: linear-gradient(135deg,
+        rgba(255, 255, 255, 0.95),
+        rgba(255, 255, 255, 0.9)
+    );
+}
+
+.col:hover::before {
+    opacity: 1;
+}
+
+.card-icon {
+    font-size: 2.5rem;
+    margin-bottom: 25px;
+    color: #6B46C1;
+    background: linear-gradient(135deg,
+        #6B46C1 0%,
+        #805AD5 50%,
+        #38B2AC 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.3s ease;
+}
+
+.col:hover .card-icon {
+    background: linear-gradient(135deg,
+        #805AD5 0%,
+        #38B2AC 50%,
+        #F6AD55 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.col h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #2D3748;
+    position: relative;
+}
+
+.col h3::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 40px;
+    height: 3px;
+    background: linear-gradient(to right,
+        #6B46C1,
+        #38B2AC,
+        #F6AD55
+    );
+    border-radius: 2px;
+    transition: width 0.3s ease;
+}
+
+.col:hover h3::after {
+    width: 60px;
+}
+
+.col p {
+    color: #4A5568;
+    line-height: 1.7;
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+.feature-list {
+    margin-top: 20px;
+    padding: 0;
+    list-style: none;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+    color: #4A5568;
+    font-size: 1rem;
+}
+
+.feature-item svg {
+    color: transparent;
+    background: linear-gradient(135deg,
+        #6B46C1 0%,
+        #805AD5 100%
+    );
+    -webkit-background-clip: text;
+    margin-right: 10px;
+    font-size: 1.1rem;
+}
+
+/* Add shimmer effect to cards */
+.col::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+        to right,
+        transparent 0%,
+        rgba(255, 255, 255, 0.3) 50%,
+        transparent 100%
+    );
+    transform: skewX(-25deg);
+    animation: shimmer 6s infinite;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.col:hover::after {
+    opacity: 1;
+}
+
+@keyframes shimmer {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 200%;
+    }
+}
+
+/* Enhanced mobile styles */
+@media (max-width: 768px) {
+    .section-header h2 {
+        font-size: 2.2rem;
+    }
+    
+    .section-header p {
+        font-size: 1.1rem;
+        padding: 0 20px;
+    }
+    
+    .col {
+        padding: 25px 20px;
+    }
+} 
